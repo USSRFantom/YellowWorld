@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Yellow World</string>
+    <string name="yellow_world">Желтый Мир</string>
+    <string name="start_screen_picture">картинка стартовой заставки</string>
+</resources>
