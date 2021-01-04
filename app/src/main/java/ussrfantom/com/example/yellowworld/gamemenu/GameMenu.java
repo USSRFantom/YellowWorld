@@ -2,7 +2,9 @@ package ussrfantom.com.example.yellowworld.gamemenu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
 import android.view.WindowManager;
 
 import ussrfantom.com.example.yellowworld.R;
@@ -14,5 +16,7 @@ public class GameMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_menu);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        startService(new Intent(this, MyService.class));
     }
 }
