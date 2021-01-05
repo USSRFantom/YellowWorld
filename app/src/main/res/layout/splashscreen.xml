@@ -33,6 +33,6 @@
             android:text="@string/yellow_world"
             android:textColor="@color/red"
             android:textSize="44sp"
-            android:textStyle="bold" />
+            android:textStyle="bold|italic"/>
     </LinearLayout>
 </RelativeLayout>

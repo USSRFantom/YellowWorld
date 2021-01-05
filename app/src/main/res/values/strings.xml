@@ -2,4 +2,9 @@
     <string name="app_name">Yellow World</string>
     <string name="yellow_world">Желтый Мир</string>
     <string name="start_screen_picture">картинка стартовой заставки</string>
+    <string name="Start">Играть</string>
+    <string name="Hints">Подсказки</string>
+    <string name="Past_the_game">Прошедшие игру</string>
+    <string name="AssistanceToTheProject">Помощь проекту</string>
+    <string name="Exit">Выход</string>
 </resources>

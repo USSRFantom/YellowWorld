@@ -4,14 +4,12 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import ussrfantom.com.example.yellowworld.R;
 
-public class MyService extends Service {
-
+public class MyService2 extends Service {
     public static MediaPlayer player;
     @Nullable
     @Override
@@ -21,8 +19,7 @@ public class MyService extends Service {
 
     @Override
     public void onCreate() {
-        player = MediaPlayer.create(this, R.raw.fonmuz);
-        player.setLooping(true); // зацикливаем
+        player = MediaPlayer.create(this, R.raw.kolokol);
     }
 
     @Override
