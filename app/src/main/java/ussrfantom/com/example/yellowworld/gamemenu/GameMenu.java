@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import ussrfantom.com.example.yellowworld.Elevator;
 import ussrfantom.com.example.yellowworld.R;
@@ -20,6 +21,8 @@ public class GameMenu extends AppCompatActivity {
     Button buttonPastTheGame;
     Button buttonAssistanceToTheProject;
     Button buttonExit;
+    private long backPressedTime;
+    private Toast backToast;
 
 
 
@@ -58,33 +61,53 @@ public class GameMenu extends AppCompatActivity {
                 mp3.start();
             }
         });
-
+            // Кнопка прошедшие игру
         buttonPastTheGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mp3.start();
+                MyService.player.stop();
+                Intent intent = new Intent(GameMenu.this, PastTheGame.class);
+                startActivity(intent);
+
             }
         });
 
+
+        //Кнопка поддержать проект
         buttonAssistanceToTheProject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mp3.start();
+                MyService.player.stop();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/public200716291"));
+                startActivity(intent);
             }
+
         });
 
+        //Кнопка выход
         buttonExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               startService(new Intent(GameMenu.this, MyService2.class));
                mp3.start();
+                MyService.player.stop();
+               GameMenu.super.onBackPressed();
             }
         });
-
-
     }
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()){
+            MyService.player.stop();
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        }else{
+            backToast = Toast.makeText(getBaseContext(), "Нажмите еще раз, чтобы выйти", Toast.LENGTH_SHORT);
+            backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
+    }
 }
