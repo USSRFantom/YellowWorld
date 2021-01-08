@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -23,7 +24,7 @@ import ussrfantom.com.example.yellowworld.R;
 public class PastTheGame extends AppCompatActivity {
 
     private RecyclerView recyclerViewWinner;
-    private  FirebaseFirestore db;
+    private FirebaseFirestore db;
     private ArrayList<Winner> winners = new ArrayList<>();
 
     @Override
@@ -40,16 +41,16 @@ public class PastTheGame extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(PastTheGame.this, "Получена", Toast.LENGTH_SHORT).show();
                             QuerySnapshot querySnapshot = task.getResult();
                             if (querySnapshot == null) return;
-                            for (QueryDocumentSnapshot documentSnapshot : querySnapshot){
-                                  Map<String, Object> user =  documentSnapshot.getData();
+                            for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {
+                                Map<String, Object> user = documentSnapshot.getData();
                                 winners.add(new Winner(user.get("name").toString(), user.get("number").toString(), user.get("description").toString()));
                             }
                         } else {
-                            Toast.makeText(PastTheGame.this, "Ошибка" , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PastTheGame.this, "Ошибка", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -59,5 +60,13 @@ public class PastTheGame extends AppCompatActivity {
         recyclerViewWinner.setAdapter(adapter);
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+            super.onBackPressed();
+        Intent intent = new Intent(this, GameMenu.class);
+        startActivity(intent);
+        finish();
     }
 }

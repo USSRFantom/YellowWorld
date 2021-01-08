@@ -25,9 +25,6 @@ public class GameMenu extends AppCompatActivity {
     private Toast backToast;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +58,7 @@ public class GameMenu extends AppCompatActivity {
                 mp3.start();
             }
         });
-            // Кнопка прошедшие игру
+        // Кнопка прошедшие игру
         buttonPastTheGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,21 +87,21 @@ public class GameMenu extends AppCompatActivity {
         buttonExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               mp3.start();
+                mp3.start();
                 MyService.player.stop();
-               GameMenu.super.onBackPressed();
+                GameMenu.super.onBackPressed();
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        if (backPressedTime + 2000 > System.currentTimeMillis()){
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
             MyService.player.stop();
             backToast.cancel();
             super.onBackPressed();
             return;
-        }else{
+        } else {
             backToast = Toast.makeText(getBaseContext(), "Нажмите еще раз, чтобы выйти", Toast.LENGTH_SHORT);
             backToast.show();
         }

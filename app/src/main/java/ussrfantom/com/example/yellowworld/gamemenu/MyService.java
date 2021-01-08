@@ -13,6 +13,7 @@ import ussrfantom.com.example.yellowworld.R;
 public class MyService extends Service {
 
     public static MediaPlayer player;
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {

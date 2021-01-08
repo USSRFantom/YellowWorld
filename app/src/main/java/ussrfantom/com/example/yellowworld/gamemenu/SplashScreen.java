@@ -27,6 +27,7 @@ public class SplashScreen extends Activity {
             }
         }, SPLASH_DISPLEY_LENGHT);
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

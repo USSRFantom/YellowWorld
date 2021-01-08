@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,10 +9,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black"
         android:orientation="vertical"
-        tools:ignore="UselessParent"
         android:padding="10dp"
-        android:background="@color/black">
+        tools:ignore="UselessParent">
 
 
         <Button
@@ -22,73 +21,73 @@
             android:layout_height="match_parent"
             android:layout_weight="0.2"
             android:background="@drawable/button_stroke_red_press_yellow"
+            android:drawableLeft="@drawable/iconmenu1"
+            android:gravity="left|center_vertical"
+            android:padding="20dp"
             android:text="@string/Start"
             android:textColor="@color/white"
             android:textSize="24sp"
-            android:drawableLeft="@drawable/iconmenu1"
-            android:gravity="left|center_vertical"
-            android:textStyle="bold|italic"
-            android:padding="20dp"/>
+            android:textStyle="bold|italic" />
 
         <Button
-                android:id="@+id/buttonHints"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/Hints"
-                android:layout_weight="0.2"
-                android:background="@drawable/button_stroke_red_press_yellow"
-                android:layout_marginTop="10dp"
-            android:textSize="24sp"
-            android:textColor="@color/white"
+            android:id="@+id/buttonHints"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.2"
+            android:background="@drawable/button_stroke_red_press_yellow"
             android:drawableLeft="@drawable/iconmenu3"
             android:gravity="left|center_vertical"
-            android:textStyle="bold|italic"
             android:padding="20dp"
-            />
+            android:text="@string/Hints"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
 
 
-            <Button
-                android:id="@+id/buttonPastTheGame"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/Past_the_game"
-                android:layout_weight="0.2"
-                android:background="@drawable/button_stroke_red_press_yellow"
-                android:layout_marginTop="10dp"
-                android:textSize="24sp"
-                android:textColor="@color/white"
-                android:drawableLeft="@drawable/iconmenu2"
-                android:gravity="left|center_vertical"
-                android:textStyle="bold|italic"
-                android:padding="20dp"
-                />
-            <Button
-                android:id="@+id/buttonAssistanceToTheProject"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/AssistanceToTheProject"
-                android:layout_weight="0.2"
-                android:background="@drawable/button_stroke_red_press_yellow"
-                android:layout_marginTop="10dp"
-                android:textSize="24sp"
-                android:textColor="@color/white"
-                android:drawableLeft="@drawable/iconmenu4"
-                android:gravity="left|center_vertical"
-                android:textStyle="bold|italic"
-                android:padding="20dp"/>
-            <Button
-                android:id="@+id/buttonExit"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/Exit"
-                android:layout_weight="0.2"
-                android:background="@drawable/button_stroke_red_press_yellow"
-                android:layout_marginTop="10dp"
-                android:textSize="24sp"
-                android:textColor="@color/white"
-                android:drawableLeft="@drawable/iconmenu5"
-                android:gravity="left|center_vertical"
-                android:textStyle="bold|italic"
-                android:padding="20dp"/>
+        <Button
+            android:id="@+id/buttonPastTheGame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.2"
+            android:background="@drawable/button_stroke_red_press_yellow"
+            android:drawableLeft="@drawable/iconmenu2"
+            android:gravity="left|center_vertical"
+            android:padding="20dp"
+            android:text="@string/Past_the_game"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/buttonAssistanceToTheProject"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.2"
+            android:background="@drawable/button_stroke_red_press_yellow"
+            android:drawableLeft="@drawable/iconmenu4"
+            android:gravity="left|center_vertical"
+            android:padding="20dp"
+            android:text="@string/AssistanceToTheProject"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/buttonExit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.2"
+            android:background="@drawable/button_stroke_red_press_yellow"
+            android:drawableLeft="@drawable/iconmenu5"
+            android:gravity="left|center_vertical"
+            android:padding="20dp"
+            android:text="@string/Exit"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
     </LinearLayout>
 </RelativeLayout>

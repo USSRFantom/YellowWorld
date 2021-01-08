@@ -40,8 +40,7 @@ public class WinnerAdapter extends RecyclerView.Adapter<WinnerAdapter.WinnerView
     }
 
 
-
-    class WinnerViewHolder extends RecyclerView.ViewHolder{
+    class WinnerViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewName;
         private TextView textViewData;
