@@ -2,6 +2,8 @@ package ussrfantom.com.example.yellowworld.gamemenu;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,18 +15,24 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import ussrfantom.com.example.yellowworld.R;
 
 public class PastTheGame extends AppCompatActivity {
 
+    private RecyclerView recyclerViewWinner;
     private  FirebaseFirestore db;
+    private ArrayList<Winner> winners = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_past_the_game);
+        recyclerViewWinner = findViewById(R.id.recyclerViewWinner);
+
+
         db = FirebaseFirestore.getInstance();
 
         db.collection("users")
@@ -38,14 +46,18 @@ public class PastTheGame extends AppCompatActivity {
                             if (querySnapshot == null) return;
                             for (QueryDocumentSnapshot documentSnapshot : querySnapshot){
                                   Map<String, Object> user =  documentSnapshot.getData();
-                                  Log.i("12312312312312", user.get("name").toString());
-                                Log.i("12312312312312", user.get("number").toString());
+                                winners.add(new Winner(user.get("name").toString(), user.get("number").toString(), user.get("description").toString()));
                             }
                         } else {
                             Toast.makeText(PastTheGame.this, "Ошибка" , Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
+        WinnerAdapter adapter = new WinnerAdapter(winners);
+        recyclerViewWinner.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewWinner.setAdapter(adapter);
+
 
     }
 }

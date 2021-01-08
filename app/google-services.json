@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "672248213220",
+    "project_id": "yellowworld-d3cf4",
+    "storage_bucket": "yellowworld-d3cf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672248213220:android:4c564e857ac75026cb86f1",
+        "android_client_info": {
+          "package_name": "ussrfantom.com.example.yellowworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672248213220-jtg5cgnofa8vuqpmvrsdndjrdhbua26b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoND-SzD_Q3JpUUGDwZY4c5b4GvyFSbF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672248213220-jtg5cgnofa8vuqpmvrsdndjrdhbua26b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
