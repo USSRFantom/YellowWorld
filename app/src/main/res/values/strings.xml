@@ -7,4 +7,10 @@
     <string name="Past_the_game">Прошедшие игру</string>
     <string name="AssistanceToTheProject">Помощь проекту</string>
     <string name="Exit">Выход</string>
+
+    <string name="chapter1">Глава 1: Лифт</string>
+    <string name="chapter2">Глава 2: Желтый Мир</string>
+    <string name="chapter3">Глава 3: Возвращение</string>
+    <string name="back">Назад</string>
+    <string name="game_worlds">Игровые Миры</string>
 </resources>

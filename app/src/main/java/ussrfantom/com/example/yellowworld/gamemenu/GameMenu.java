@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import ussrfantom.com.example.yellowworld.Elevator;
 import ussrfantom.com.example.yellowworld.R;
 
 public class GameMenu extends AppCompatActivity {
@@ -45,9 +44,8 @@ public class GameMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mp3.start();
-                Intent intent = new Intent(GameMenu.this, Elevator.class);
+                Intent intent = new Intent(GameMenu.this, GameWorld.class);
                 startActivity(intent);
-                MyService.player.stop();
                 finish();
             }
         });
@@ -63,7 +61,6 @@ public class GameMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mp3.start();
-                MyService.player.stop();
                 Intent intent = new Intent(GameMenu.this, PastTheGame.class);
                 startActivity(intent);
 
