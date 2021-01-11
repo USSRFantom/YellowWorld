@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,7 @@ public class ChapterLevels extends AppCompatActivity {
         recyclerViewLevels.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewLevels.setAdapter(levelsAdapter);
 
+
         //Кнопка Назад
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +57,20 @@ public class ChapterLevels extends AppCompatActivity {
                 Intent intent = new Intent(ChapterLevels.this, GameWorld.class);
                 startActivity(intent);
                 finish();
+            }
+
+        });
+        //Переходы на уровни
+        levelsAdapter.setOnLevelsClickListener(new LevelsAdapter.OnLevelsClickListener() {
+            @Override
+            public void onLevelsClick(int position) {
+                Toast.makeText(ChapterLevels.this, "click" + position, Toast.LENGTH_SHORT).show();
+                switch (position){
+                    case 0:
+                        Intent intent = new Intent(ChapterLevels.this, Chapter1Level1.class);
+                        startActivity(intent);
+                        finish();
+                }
             }
         });
 

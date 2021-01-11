@@ -16,9 +16,18 @@ import ussrfantom.com.example.yellowworld.gamemenu.WinnerAdapter;
 
 public class LevelsAdapter extends RecyclerView.Adapter<LevelsAdapter.LevelsViewHolder>{
     private ArrayList<Levels> levels;
+    private OnLevelsClickListener onLevelsClickListener;
 
     public LevelsAdapter(ArrayList<Levels> levels) {
         this.levels = levels;
+    }
+
+    interface OnLevelsClickListener{
+        void onLevelsClick(int position);
+    }
+
+    public void setOnLevelsClickListener(OnLevelsClickListener onLevelsClickListener) {
+        this.onLevelsClickListener = onLevelsClickListener;
     }
 
     @NonNull
@@ -47,6 +56,14 @@ public class LevelsAdapter extends RecyclerView.Adapter<LevelsAdapter.LevelsView
         public LevelsViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.textViewNameLevels);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onLevelsClickListener != null){
+                        onLevelsClickListener.onLevelsClick(getAdapterPosition());
+                    }
+                }
+            });
         }
     }
 
