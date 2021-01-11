@@ -13,4 +13,11 @@
     <string name="chapter3">Глава 3: Возвращение</string>
     <string name="back">Назад</string>
     <string name="game_worlds">Игровые Миры</string>
+    <string name="Levels">Уровни:</string>
+
+    <string-array name="nameLevels">
+        <item>1. Вступление</item>
+        <item>2. Находка</item>
+        <item>3. Беседа</item>
+    </string-array>
 </resources>

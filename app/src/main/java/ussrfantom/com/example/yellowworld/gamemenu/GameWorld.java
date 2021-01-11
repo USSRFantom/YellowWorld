@@ -3,6 +3,7 @@ package ussrfantom.com.example.yellowworld.gamemenu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import ussrfantom.com.example.yellowworld.R;
+import ussrfantom.com.example.yellowworld.gamemenu.Chapter1.ChapterLevels;
 
 public class GameWorld extends AppCompatActivity {
 
@@ -19,7 +21,7 @@ public class GameWorld extends AppCompatActivity {
     Button buttonChapter3;
     Button buttonBack;
 
-    public static int gameWorld = 1;
+    public static int gameWorld;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,12 @@ public class GameWorld extends AppCompatActivity {
                 MyService.player.stop();
                 if (gameWorld == 1){
                     Toast.makeText(GameWorld.this, "Уровень открыт", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(GameWorld.this, ChapterLevels.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Toast.makeText(GameWorld.this, "Уровень закрыт", Toast.LENGTH_SHORT).show();
+                    System.out.println(gameWorld);
                 }
 
             }
@@ -106,7 +114,8 @@ public class GameWorld extends AppCompatActivity {
             }
         });
 
-
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        gameWorld = save.getInt("world", 1);
 
     }
 

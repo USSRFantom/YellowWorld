@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".gamemenu.Chapter1.ChapterLevels">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/black"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/textViewLevels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Levels"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold|italic"
+                android:layout_weight="0.8"
+                />
+
+            <Button
+                android:id="@+id/buttonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold|italic"
+                android:background="@drawable/button_stroke_red_press_yellow"
+                android:padding="10dp"
+                android:textAllCaps="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewLevels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

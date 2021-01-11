@@ -44,9 +44,16 @@ public class GameMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mp3.start();
-                Intent intent = new Intent(GameMenu.this, GameWorld.class);
-                startActivity(intent);
-                finish();
+                if (GameWorld.gameWorld == 0){
+                    GameWorld.gameWorld = 1;
+                    Intent intent = new Intent(GameMenu.this, GameWorld.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Intent intent = new Intent(GameMenu.this, GameWorld.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
