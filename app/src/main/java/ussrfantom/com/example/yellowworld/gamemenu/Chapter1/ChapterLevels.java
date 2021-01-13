@@ -67,6 +67,7 @@ public class ChapterLevels extends AppCompatActivity {
                 Toast.makeText(ChapterLevels.this, "click" + position, Toast.LENGTH_SHORT).show();
                 switch (position){
                     case 0:
+                        mp3.start();
                         Intent intent = new Intent(ChapterLevels.this, Chapter1Level1.class);
                         startActivity(intent);
                         finish();
