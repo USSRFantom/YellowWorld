@@ -58,7 +58,7 @@ public class Chapter1Level1 extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         btnFullScreen = playerView.findViewById(R.id.bt_fullscreen);
 
-        Uri videoUrl = Uri.parse("https://radikal.ru/video/MnK3bWJ6yTA");
+        Uri videoUrl = Uri.parse("video1");
 
         LoadControl loadControl = new DefaultLoadControl();
 

@@ -70,11 +70,6 @@
                         android:textStyle="bold|italic"
                          />
 
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Button" />
 
                     <com.google.android.exoplayer2.ui.PlayerView
                         android:layout_width="match_parent"
@@ -98,6 +93,19 @@
                             />
 
                     </com.google.android.exoplayer2.ui.PlayerView>
+
+                    <Button
+                        android:id="@+id/buttonContinue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/button_Im_ready"
+                        android:padding="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/button_stroke_red_press_yellow"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold|italic"/>
 
 
                 </LinearLayout>
